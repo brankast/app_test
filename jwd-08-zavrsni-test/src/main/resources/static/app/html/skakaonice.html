@@ -1,0 +1,63 @@
+<div ng-controller="skakaoniceCtrl">
+
+	<br />
+
+	
+	Filter za pretragu takmicara:  <input type="checkbox" ng-model="all"> <br/>
+	<br />
+	<form ng-show="all">
+		<div class="form-group">
+			<label>Skakaonica</label> <select
+				ng-model="trazeniTakmicar.skakaonicaId" class="form-control">
+				<option ng-repeat="s in skakaonice" value="{{s.id}}" >{{s.naziv}}</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Ime i prezime</label> <input
+				ng-model="trazeniTakmicar.imePrezime" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Drzava</label> <input
+				ng-model="trazeniTakmicar.drzava" type="text" class="form-control">
+		</div>
+
+
+		<button ng-click="trazi()" type="button" class="btn btn-primary">Trazi</button>
+	</form>
+
+	<br /> <br /> <br />
+	<div class="btn-group pull-right">
+		<button class="btn btn-primary" ng-click="nazad()" ng-disabled="pageNum == 0">Prethodna</button>
+		<button class="btn btn-primary" ng-click="napred()" ng-disabled="pageNum == totalPages - 1">Sledeća</button>
+	</div>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Ime i prezime</th>
+				<th>Drzava</th>
+				<th>G. rodjenja</th>
+				<th>Visina</th>
+				<th>Skakaonica</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="t in takmicari">
+				<td>{{t.imePrezime}}</td>
+				<td>{{t.drzava}}</td>
+				<td>{{t.godinaRodjenja}}</td>
+				<td>{{t.visina}}</td>
+				<td>{{t.skakaonicaNaziv}}</td>
+				<td>
+					<button ng-click="obrisi(t.id)" class="btn btn-danger">Obrisi</button>
+					<button ng-click="izmeni(t.id)" class="btn btn-warning">Izmeni</button>
+					<button ng-click="skok(t.id)" class="btn btn-light">Unos skoka</button>
+					<button ng-click="skokovi(t.id)" class="btn btn-info">Skokovi</button>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<br/>
+	<button ng-click="dodaj()" type="button" class="btn btn-warning">Dodaj novog takmicara</button><br/>
+	<hr>
+</div>

@@ -1,0 +1,18 @@
+<div ng-controller="skokAddCtrl">
+<form>
+		<div class="form-group">
+			<label>Daljina</label> <input
+				ng-model="novSkok.daljina" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Ocena sudije</label> <input
+				ng-model="novSkok.ocenaSudija" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Takmicar</label> <input
+				ng-model="novSkok.takmicarId" type="text" class="form-control" ng-disabled="true">
+		</div>
+		<button ng-click="dodaj()" type="button" class="btn btn-primary">Dodaj</button>
+
+	</form>
+	</div>

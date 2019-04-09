@@ -1,0 +1,32 @@
+<div ng-controller="takmicarAddCtrl">
+<form>
+		<div class="form-group">
+			<label>Ime i prezime</label> <input
+				ng-model="novTakmicar.imePrezime" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Drzava</label> <input
+				ng-model="novTakmicar.drzava" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label">Visina</label> <input
+				ng-model="novTakmicar.visina" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Godina rodjena</label> <input
+				ng-model="novTakmicar.godinaRodjenja" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Email</label> <input
+				ng-model="novTakmicar.email" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Skakaonica</label> <select
+				ng-model="novTakmicar.skakaonicaId" class="form-control">
+				<option ng-repeat="s in skakaonice" value="{{s.id}}">{{s.naziv}}</option>
+			</select>
+		</div>
+
+		<button ng-click="dodaj()" type="button" class="btn btn-primary">Dodaj</button>
+	</form>
+	</div>

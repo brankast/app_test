@@ -1,0 +1,27 @@
+<div ng-controller="takmicarEditCtrl">
+    <form>
+        <div class="form-group">
+			<label>Ime i prezime</label> <input
+				ng-model="stariTakmicar.imePrezime" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Drzava</label> <input
+				ng-model="stariTakmicar.drzava" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Visina</label> <input
+				ng-model="stariTakmicar.visina" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Godina rodjenja</label> <input
+				ng-model="stariTakmicar.godinaRodjenja" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Skakaonica</label> <select
+				ng-model="stariTakmicar.skakaonicaId" class="form-control">
+				<option ng-repeat="s in skakaonice" value="{{s.id}}" ng-selected="s.id == stariTakmicar.skakaonicaId">{{s.naziv}}</option>
+			</select>
+		</div>
+        <button type="button" class="btn btn-primary" ng-click="izmeni()">Izmeni</button>
+    </form>
+</div>

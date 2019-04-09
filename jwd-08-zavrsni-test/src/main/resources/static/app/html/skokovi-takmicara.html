@@ -1,0 +1,22 @@
+<div ng-controller="skokoviCtrl">	
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Takmicar</th>
+				<th>Daljina skoka</th>
+				<th>Zbir poena</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="s in skokovi">
+				<td>{{s.takmicarId}}</td>
+				<td>{{s.daljina}}</td>
+				<td>{{s.zbirPoena}}</td>
+				<td>
+					<button ng-click="zbir(s.id)" class="btn btn-danger">Izracunaj poene</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<br/><button ng-click="nazad()" class="btn btn-info">Pocetna strana</button>
+</div>
